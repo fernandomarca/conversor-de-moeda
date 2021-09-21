@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoinConverter">
-        <activity android:name=".ui.main.MainActivity">
+        <activity android:name="br.com.dio.coinconverter.presentation.ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.history.HistoryActivity" />
+        <activity android:name="br.com.dio.coinconverter.presentation.ui.history.HistoryActivity" />
 
     </application>
 

@@ -1,4 +1,4 @@
-package br.com.dio.coinconverter.ui.history
+package br.com.dio.coinconverter.presentation.ui.history
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

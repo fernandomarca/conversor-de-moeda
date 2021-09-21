@@ -55,10 +55,10 @@ class MainViewModel(
     }
 
     sealed class State {
-        object Loading: State()
-        object Saved: State()
+        object Loading : State()
+        object Saved : State()
 
-        data class Success(val exchange: ExchangeResponseValue): State()
-        data class Error(val error: Throwable): State()
+        data class Success(val exchange: ExchangeResponseValue) : State()
+        data class Error(val error: Throwable) : State()
     }
 }

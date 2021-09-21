@@ -1,4 +1,4 @@
-package br.com.dio.coinconverter.ui.main
+package br.com.dio.coinconverter.presentation.ui.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,7 +16,7 @@ import br.com.dio.coinconverter.core.extensions.text
 import br.com.dio.coinconverter.data.model.Coin
 import br.com.dio.coinconverter.databinding.ActivityMainBinding
 import br.com.dio.coinconverter.presentation.MainViewModel
-import br.com.dio.coinconverter.ui.history.HistoryActivity
+import br.com.dio.coinconverter.presentation.ui.history.HistoryActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
     private fun bindObserve() {
         viewModel.state.observe(this) {
             when (it) {
-                MainViewModel.State.Loading -> dialog.show()
+                is MainViewModel.State.Loading -> dialog.show()
                 is MainViewModel.State.Error -> {
                     dialog.dismiss()
                     createDialog {
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
                     }.show()
                 }
                 is MainViewModel.State.Success -> success(it)
-                MainViewModel.State.Saved -> {
+                is MainViewModel.State.Saved -> {
                     dialog.dismiss()
                     createDialog {
                         setMessage("item salvo com sucesso!")
